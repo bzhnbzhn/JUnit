@@ -12,8 +12,7 @@ public class ProductDetailPage extends BasePage{
 
     private static final String PRODUCT_NAME = "//h1[@property='name']";
     private static final String PRODUCT_BASE_PRICE = "//span[@class='price__base']";
-    private static final String ADD_TO_CART_BUTTON = "//div[@class='product-hero__quantity-selector']//button[@class='js-quantity-selector-button-add js-quantity-selector-button-add-to-cart c-button--primary button--icon quantity-selector__add-to-cart-button c-button transformed']";
-
+    private static final String ADD_TO_CART_BUTTON = "//div[@class='quantity-selector__wrapper']";
     public ProductDetailPage(WebDriver driver) {
         super(driver);
     }
@@ -30,7 +29,5 @@ public class ProductDetailPage extends BasePage{
 
     public void clickAddToCartButton(){
         driver.findElement(By.xpath(ADD_TO_CART_BUTTON)).click();
-        new WebDriverWait(driver, Duration.ofSeconds(5))
-                .until((ExpectedConditions.invisibilityOfElementLocated(By.xpath(ADD_TO_CART_BUTTON))));
     }
 }

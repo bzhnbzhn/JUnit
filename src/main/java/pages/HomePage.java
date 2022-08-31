@@ -24,14 +24,16 @@ public class HomePage extends BasePage {
         return driver.findElement(By.xpath(SEARCH_INPUT));
     }
 
-    public void findElementByXpath(String element) {
+    public boolean findElementByXpath(String element) {
         driver.get(HOME_PAGE_LINK);
         driver.findElement(By.xpath(element)).isDisplayed();
+        return true;
     }
 
-    public void findElementByClassName(String element) {
+    public boolean findElementByClassName(String element) {
         driver.get(HOME_PAGE_LINK);
         driver.findElement(By.className(element)).isDisplayed();
+        return true;
     }
 
     public void openCartPage(){

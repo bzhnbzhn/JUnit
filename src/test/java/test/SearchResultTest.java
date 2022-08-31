@@ -1,9 +1,7 @@
 package test;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
 
 public class SearchResultTest extends BaseTest {
 
@@ -32,10 +30,4 @@ public class SearchResultTest extends BaseTest {
         String addedProductName = getCartPage().getAddedProductName();
         Assertions.assertTrue(productName.equalsIgnoreCase((addedProductName)));
     }
-    @Tag("critical")
-    @Test
-    public void openCheckOutPage(){
-        addProductToCartAndCheckNames();
-        getCartPage().openCheckOutButton();
- }
 }
