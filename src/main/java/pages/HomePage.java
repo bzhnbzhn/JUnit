@@ -8,7 +8,6 @@ import org.openqa.selenium.WebElement;
 public class HomePage extends BasePage {
 
     private static final String SEARCH_INPUT = "//input[@class='input__input search-v2__input js-search-input-v2']";
-    private static final String HOME_PAGE_LINK = "https://www.etos.nl/";
     private static final String CART_ICON = "//a[@class='minicart__item minicart__item--link js-minicart-link']";
 
 
@@ -24,19 +23,11 @@ public class HomePage extends BasePage {
         return driver.findElement(By.xpath(SEARCH_INPUT));
     }
 
-    public boolean findElementByXpath(String element) {
-        driver.get(HOME_PAGE_LINK);
-        driver.findElement(By.xpath(element)).isDisplayed();
-        return true;
+    public boolean isElementByXpathDisplayed(String element) {
+        return driver.findElement(By.xpath(element)).isDisplayed();
     }
 
-    public boolean findElementByClassName(String element) {
-        driver.get(HOME_PAGE_LINK);
-        driver.findElement(By.className(element)).isDisplayed();
-        return true;
-    }
-
-    public void openCartPage(){
+    public void openCartPage() {
         driver.findElement(By.xpath(CART_ICON)).click();
     }
 }

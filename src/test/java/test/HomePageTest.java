@@ -11,16 +11,16 @@ public class HomePageTest extends BaseTest {
 
     @Test
     public void checkThatHomePageContainsLogo() {
-        Assertions.assertTrue(getHomePage().findElementByXpath(SITE_LOGO));
+        Assertions.assertTrue(getHomePage().isElementByXpathDisplayed(SITE_LOGO));
     }
 
     @Test
     public void checkThatHomePageContainsSingIcon() {
-        Assertions.assertTrue(getHomePage().findElementByXpath(SING_ICON));
+        Assertions.assertTrue(getHomePage().isElementByXpathDisplayed(SING_ICON));
     }
 
     @Test
     public void checkThatHomePageContainsNavigationMenu() {
-        Assertions.assertTrue(getHomePage().findElementByXpath(NAVIGATION_MENU));
+        Assertions.assertTrue(getHomePage().isElementByXpathDisplayed(NAVIGATION_MENU));
     }
 }

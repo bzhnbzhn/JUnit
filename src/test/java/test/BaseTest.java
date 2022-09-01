@@ -8,10 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import pages.CartPage;
-import pages.HomePage;
-import pages.ProductDetailPage;
-import pages.SearchResultPage;
+import pages.*;
 
 import java.time.Duration;
 
@@ -63,4 +60,7 @@ public class BaseTest {
         return new CartPage(getDriver());
     }
 
+    public CheckOutPage getCheckOutPage() {
+        return new CheckOutPage(getDriver());
+    }
 }
