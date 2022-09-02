@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.*;
 
 import java.time.Duration;
+import java.util.Objects;
 
 
 public class BaseTest {
@@ -21,7 +22,11 @@ public class BaseTest {
 
     @BeforeEach
     public void profileSetUp() {
-        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
+        if (Objects.equals(System.getProperty("os.name"), "Mac OS X")) {
+            System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
+        } else {
+            System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriverW.exe");
+        }
         driver = new ChromeDriver();
         driver.manage().window().maximize();
     }
