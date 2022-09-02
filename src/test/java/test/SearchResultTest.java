@@ -27,6 +27,5 @@ public class SearchResultTest extends BaseTest {
         Assertions.assertEquals(cartTotal, cartSubTotal);
         Assertions.assertEquals(cartTotal, checkOutSubTotal);
         Assertions.assertEquals("€ 3,99", tax);
-
     }
 }
